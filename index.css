@@ -1,0 +1,277 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: url(/images/logo.jpg);
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-family: Raleway, Poppins;
+  pointer-events: auto;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 70%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+}
+
+header .logo {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: -webkit-gradient(linear, left top, right top, from(red), to(#5f3c36));
+  background: linear-gradient(to right, red, #5f3c36);
+  display: inline-block;
+  width: max-contenta;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin-top: .5rem;
+  padding: .1rem;
+  border-radius: 5em;
+  border: blue 3px solid;
+  -webkit-box-shadow: 50em;
+          box-shadow: 50em;
+  position: relative;
+}
+
+header .logo:before {
+  content: '';
+  position: absolute;
+  width: 20%;
+  height: 3.1em;
+  left: 2em;
+  top: -.9em;
+  z-index: -99;
+  background: #5f3c36;
+  border: blue 3px solid;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style-type: none;
+}
+
+header nav ul li {
+  padding: 1rem;
+  margin: 0 2rem;
+  display: block;
+}
+
+header nav ul li a {
+  color: yellow;
+  text-decoration: none;
+}
+
+header nav ul li a:hover {
+  text-shadow: 5px 5px 5px;
+}
+
+header nav ul .active .member {
+  text-shadow: none;
+  color: white;
+  background: blueviolet;
+  padding: .75rem;
+  border-radius: 5em;
+}
+
+header nav ul .active .member:hover {
+  background: white;
+  color: blueviolet;
+  font-weight: bold;
+}
+
+section {
+  margin: 0 auto;
+  padding: 1rem;
+  width: 70%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  color: white;
+  background-color: none;
+  -webkit-transition: rotate .1s infinite;
+  transition: rotate .1s infinite;
+}
+
+.overlay {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  position: fixed;
+  background: -webkit-gradient(linear, right top, left top, from(white), to(coral));
+  background: linear-gradient(to left, white, coral);
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 70% 20% auto;
+      grid-template-columns: 70% 20% auto;
+  opacity: 0;
+  -webkit-transform: translateY(10%) scale(0.1);
+          transform: translateY(10%) scale(0.1);
+  margin: 0 auto;
+  padding: 0rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  border-radius: 5em;
+}
+
+.overlay .left, .overlay .middle, .overlay .right {
+  width: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(coral), to(teal));
+  background: linear-gradient(to right, coral, teal);
+  padding: 4rem;
+  margin: 0rem;
+  -webkit-box-shadow: 1px 1px 1px 1px;
+          box-shadow: 1px 1px 1px 1px;
+  border: green 3px solid;
+  position: relative;
+  opacity: 0;
+  -webkit-transform: translateX(10%) scale(0.9);
+          transform: translateX(10%) scale(0.9);
+}
+
+.overlay .left:before, .overlay .middle:before, .overlay .right:before {
+  content: '';
+  position: absolute;
+  left: 2rem;
+  top: -1rem;
+  width: 50px;
+  height: 50px;
+  background: -webkit-gradient(linear, right top, left top, from(coral), to(green));
+  background: linear-gradient(to left, coral, green);
+  -webkit-transform: rotate(90deg) scale(1);
+          transform: rotate(90deg) scale(1);
+  border-radius: 57em;
+  z-index: 3;
+}
+
+.overlay .left:after, .overlay .middle:after, .overlay .right:after {
+  content: '';
+  position: absolute;
+  left: 1.35rem;
+  top: -1.65rem;
+  width: 70px;
+  height: 70px;
+  background: #efebeb;
+  -webkit-transform: rotate(90deg) scale(1);
+          transform: rotate(90deg) scale(1);
+  border-radius: 57em;
+  z-index: 1;
+}
+
+.overlay .left {
+  border-top-left-radius: 5em;
+  border-bottom-left-radius: 5em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 30% 30% 40%;
+      grid-template-rows: 30% 30% 40%;
+  gap: 1rem;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.overlay .left h2, .overlay .left p {
+  font-weight: bold;
+  text-shadow: 5px 1px 3px 3px;
+  color: #201a23;
+}
+
+.overlay .left .go-click {
+  border-radius: 5em;
+  background: -webkit-gradient(linear, left top, right top, from(white), to(grey));
+  background: linear-gradient(to right, white, grey);
+  color: green;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: .5rem;
+  text-decoration: none;
+  -webkit-box-shadow: 1px 1px 1px 1px;
+          box-shadow: 1px 1px 1px 1px;
+  font-weight: bold;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.overlay .middle {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  gap: 1rem;
+  padding-left: 1.5em;
+  height: 100vh;
+  font-weight: bold;
+}
+
+.overlay .middle a {
+  text-decoration: none;
+}
+
+.overlay .middle .imgs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40px;
+  height: 30px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: .5em;
+  cursor: pointer;
+}
+
+.overlay .right {
+  border-top-right-radius: 5em;
+  border-bottom-right-radius: 5em;
+  height: 100vh;
+}
+
+.overlay .right img {
+  cursor: pointer;
+  display: -ms-grid;
+  display: grid;
+  position: absolute;
+  left: 1.25em;
+  top: 2em;
+  width: 50px;
+  height: auto;
+  border-radius: 50em;
+  padding-left: -3em;
+  margin-right: 2em;
+  float: right;
+}
+/*# sourceMappingURL=index.css.map */

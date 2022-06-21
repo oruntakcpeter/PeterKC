@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gsap Sample Project</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="forepage">
+    <header>
+        <a href="#" class="logo">MyLogo</a>
+
+        <nav>
+            <ul>
+               <li><a href="#" class="home">Home</a></li>
+               <li><a href="#" class="contacts">Contacts</a></li>
+               <li><a href="#" class="faq">FAQ</a></li>
+               <li><a href="#" class="subscribe">Subscribe</a></li>
+               <li class="active"><a href="#" class="member">Membership</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="caption">
+        <div class="subhead">
+            <h1>Now or Never</h1>
+            <p>Taking the advantage of special pre-treatment services to beautify your wares</p>
+        </div>
+    </section>
+</div>
+
+    <div class="overlay">
+        <div class="left stagger">
+            <h2>Giveaway Chance</h2>
+            <p>A Trial Will Convince You</p>
+            <a href="#" class="go-click">Go Click</a>
+        </div>
+        <div class="middle stagger">
+            <a href="#" class="home">Home</a>
+            <a href="#" class="home">Contacts</a>
+            <a href="#" class="home">FAQ</a>
+            <a href="#" class="home">Subscribe</a>
+            <div class="imgs">
+                <img src="images/phone.jpg" class="phone" alt="My phone">
+                <img src="images/person.jpg" class="person" alt="My person">
+            </div>
+        </div>
+        <div class="right stagger">
+            <img src="images/exit.jpg" class="exit" alt="Exit page">
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/CSSRulePlugin.min.js" integrity="sha512-EIzKYNrmzSj8Q5czLrNi/F6bplhopAp2Li9nk/8r7MW+Ov9KPEo0xrjWMYXU8lFYy5dzh/w8Ql5ShZHucrjXdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+        let open = document.querySelector('.active');
+        let close = document.querySelector('.exit');
+        let sidemenu = document.querySelector('.overlay');
+        let foremenu = document.querySelector('.forepage');
+        let t1 = gsap.timeline();
+        var rule = CSSRulePlugin.getRule("section"); //get the rule
+        var rule1 = CSSRulePlugin.getRule("header .logo"); //get the rule
+        
+       function playgsap() {
+       t1.to('.overlay', {opacity: 1, x:0, y:100, scale:.45, duration: .1,  PointerEvent:'auto'});
+        t1.to('.stagger', {opacity: 1, x:0, scale:1,  PointerEvent:'auto', stagger: .3}, "0");}
+
+        function closegsap() {gsap.to(rule, {duration: .3,  yoyo: true, repeat: '-1'})}
+
+        gsap.to(rule, {transform: 'rotateX(360deg)', backgroundColor: "none", color: "yellow", duration:1, yoyo: true, repeat: '.8'})
+
+        gsap.to(rule1, {transform: 'rotateY(360deg)', backgroundColor: "none", color: "yellow", duration:2, yoyo: true, repeat: '-1'})
+
+        open.addEventListener('click', () => {
+           playgsap(); t1.play();
+        })
+
+        close.addEventListener('click', () => {  closegsap(); t1.reverse(); 
+        foremenu.style.PointerEvent='auto';})
+        
+    </script>
+
+</body>
+</html>
